@@ -57,9 +57,14 @@ TENANT_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "profiles",
 ]
 
 INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in SHARED_APPS]
+
+ROOT_URLCONF = "project.urls"
+PUBLIC_SCHEMA_URLCONF = "project.urls_public"
 
 TENANT_MODEL = "accounts.Client"  # app.Model
 
